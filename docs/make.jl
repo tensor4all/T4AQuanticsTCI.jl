@@ -1,14 +1,14 @@
-using QuanticsTCI
+using T4AQuanticsTCI
 using Documenter
 
-DocMeta.setdocmeta!(QuanticsTCI, :DocTestSetup, :(using QuanticsTCI); recursive=true)
+DocMeta.setdocmeta!(T4AQuanticsTCI, :DocTestSetup, :(using T4AQuanticsTCI); recursive=true)
 
 makedocs(;
-    modules=[QuanticsTCI],
+    modules=[T4AQuanticsTCI],
     authors="Ritter.Marc <Ritter.Marc@physik.uni-muenchen.de> and contributors",
-    sitename="QuanticsTCI.jl",
+    sitename="T4AQuanticsTCI.jl",
     format=Documenter.HTML(;
-        canonical="https://github.com/tensor4all/QuanticsTCI.jl",
+        canonical="https://github.com/tensor4all/T4AQuanticsTCI.jl",
         edit_link="main",
         assets=String[]),
     pages=[
@@ -17,6 +17,6 @@ makedocs(;
     ])
 
 deploydocs(;
-    repo="github.com/tensor4all/QuanticsTCI.jl.git",
+    repo="github.com/tensor4all/T4AQuanticsTCI.jl.git",
     devbranch="main",
 )

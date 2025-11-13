@@ -1,5 +1,5 @@
 import QuanticsGrids as QG
-import TensorCrossInterpolation as TCI
+import T4ATensorCI as TCI
 
 N = 5               # Number of dimensions <@$\cN$@>
 tolerance = 1e-10   # Tolerance of the internal TCI

@@ -1,5 +1,5 @@
 # Documentation
 
 ```@autodocs
-Modules = [QuanticsTCI]
+Modules = [T4AQuanticsTCI]
 ```

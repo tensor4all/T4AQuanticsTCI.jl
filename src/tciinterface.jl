@@ -1,5 +1,5 @@
 struct QuanticsTensorCI2{ValueType}
-    tci::TensorCrossInterpolation.TensorCI2{ValueType}
+    tci::T4ATensorCI.TensorCI2{ValueType}
     grid::QG.Grid
     quanticsfunction::TCI.CachedFunction{ValueType}
 end
@@ -9,7 +9,7 @@ function evaluate(
     indices::Union{Array{Int},NTuple{N,Int}}
 )::ValueType where {N,ValueType}
     bitlist = QG.grididx_to_quantics(qtci.grid, Tuple(indices))
-    return TensorCrossInterpolation.evaluate(qtci.tci, bitlist)
+    return T4ATensorCI.evaluate(qtci.tci, bitlist)
 end
 
 function evaluate(qtci::QuanticsTensorCI2{V}, indices::Int...)::V where {V}
@@ -50,7 +50,7 @@ end
         kwargs...
     ) where {ValueType}
 
-Interpolate a function ``f(\mathbf{x})`` as a quantics tensor train. The tensor train itself is constructed using the 2-site tensor cross interpolation algorithm implemented in [`TensorCrossInterpolation.crossinterpolate2`](https://tensor4all.github.io/TensorCrossInterpolation.jl/dev/documentation/#TensorCrossInterpolation.crossinterpolate2-Union{Tuple{N},%20Tuple{ValueType},%20Tuple{Type{ValueType},%20Any,%20Union{Tuple{Vararg{Int64,%20N}},%20Vector{Int64}}},%20Tuple{Type{ValueType},%20Any,%20Union{Tuple{Vararg{Int64,%20N}},%20Vector{Int64}},%20Vector{Vector{Int64}}}}%20where%20{ValueType,%20N}).
+Interpolate a function ``f(\mathbf{x})`` as a quantics tensor train. The tensor train itself is constructed using the 2-site tensor cross interpolation algorithm implemented in [`T4ATensorCI.crossinterpolate2`](https://tensor4all.github.io/T4ATensorCI.jl/dev/documentation/#T4ATensorCI.crossinterpolate2-Union{Tuple{N},%20Tuple{ValueType},%20Tuple{Type{ValueType},%20Any,%20Union{Tuple{Vararg{Int64,%20N}},%20Vector{Int64}}},%20Tuple{Type{ValueType},%20Any,%20Union{Tuple{Vararg{Int64,%20N}},%20Vector{Int64}},%20Vector{Vector{Int64}}}}%20where%20{ValueType,%20N}).
 
 Arguments:
 - `ValueType` is the return type of `f`. Automatic inference is too error-prone.
@@ -65,7 +65,7 @@ All other arguments are forwareded to `crossinterpolate2`. Most importantly:
 - `maxbonddim::Int` specifies the maximum bond dimension for the TCI. Default: `typemax(Int)`, i.e. effectively unlimited.
 - `maxiter::Int` is the maximum number of iterations (i.e. optimization sweeps) before aborting the TCI construction. Default: `200`.
 
-For all other arguments, see the documentation for [`TensorCrossInterpolation.crossinterpolate2`](https://tensor4all.github.io/TensorCrossInterpolation.jl/dev/documentation/#TensorCrossInterpolation.crossinterpolate2-Union{Tuple{N},%20Tuple{ValueType},%20Tuple{Type{ValueType},%20Any,%20Union{Tuple{Vararg{Int64,%20N}},%20Vector{Int64}}},%20Tuple{Type{ValueType},%20Any,%20Union{Tuple{Vararg{Int64,%20N}},%20Vector{Int64}},%20Vector{Vector{Int64}}}}%20where%20{ValueType,%20N}).
+For all other arguments, see the documentation for [`T4ATensorCI.crossinterpolate2`](https://tensor4all.github.io/T4ATensorCI.jl/dev/documentation/#T4ATensorCI.crossinterpolate2-Union{Tuple{N},%20Tuple{ValueType},%20Tuple{Type{ValueType},%20Any,%20Union{Tuple{Vararg{Int64,%20N}},%20Vector{Int64}}},%20Tuple{Type{ValueType},%20Any,%20Union{Tuple{Vararg{Int64,%20N}},%20Vector{Int64}},%20Vector{Vector{Int64}}}}%20where%20{ValueType,%20N}).
 """
 function quanticscrossinterpolate(
     ::Type{ValueType},
@@ -116,11 +116,11 @@ function quanticscrossinterpolate(
         pivot = [rand(1:d) for d in qlocaldimensions]
         push!(
             qinitialpivots,
-            TensorCrossInterpolation.optfirstpivot(qf, qlocaldimensions, pivot)
+            T4ATensorCI.optfirstpivot(qf, qlocaldimensions, pivot)
         )
     end
 
-    qtt, ranks, errors = TensorCrossInterpolation.crossinterpolate2(
+    qtt, ranks, errors = T4ATensorCI.crossinterpolate2(
         ValueType, qf, qlocaldimensions, qinitialpivots; kwargs_...)
     return QuanticsTensorCI2{ValueType}(qtt, grid, qf), ranks, errors
 end

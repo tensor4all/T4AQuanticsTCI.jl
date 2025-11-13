@@ -1,4 +1,4 @@
-import TensorCrossInterpolation as TCI
+import T4ATensorCI as TCI
 import Random
 import QuanticsGrids as QD
 #using PythonPlot: pyplot as plt

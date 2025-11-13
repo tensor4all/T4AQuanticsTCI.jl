@@ -1,16 +1,16 @@
-# QuanticsTCI.jl user guide
+# T4AQuanticsTCI.jl user guide
 
 ```@meta
-CurrentModule = QuanticsTCI
+CurrentModule = T4AQuanticsTCI
 ```
 
-This module allows easy translation of functions to quantics representation. It meshes well with the `TensorCrossInterpolation.jl` module, together with which it provides quantics TCI functionality.
+This module allows easy translation of functions to quantics representation. It meshes well with the `T4ATensorCI.jl` module, together with which it provides quantics TCI functionality.
 
 # Quickstart
 The easiest way to construct a quantics tensor train is the `quanticscrossinterpolate` function. For example, the function ``f(x, y) = (cos(x) - cos(x - 2y)) * abs(x + y)`` can be interpolated as follows.
 
 ```@example simple
-using QuanticsTCI
+using T4AQuanticsTCI
 f(x, y) = (cos(x) - cos(x - 2y)) * abs(x + y)
 xvals = range(-6, 6; length=256)
 yvals = range(-12, 12; length=256)
@@ -57,5 +57,5 @@ The plot shows obvious noise due to the insufficient maximum bond dimension. Acc
 # Further reading
 
 - See the API Reference for all variants of calling [`quanticscrossinterpolate`](@ref).
-- If you are having trouble with convergence / efficiency of the TCI, you might have to tweak some of its options. All keyword arguments are forwarded to `TensorCrossInterpolation.crossinterpolate2()` internally. See its [documentation](https://tensor4all.github.io/TensorCrossInterpolation.jl/dev/documentation/#TensorCrossInterpolation.crossinterpolate2-Union{Tuple{N},%20Tuple{ValueType},%20Tuple{Type{ValueType},%20Any,%20Union{Tuple{Vararg{Int64,%20N}},%20Vector{Int64}}},%20Tuple{Type{ValueType},%20Any,%20Union{Tuple{Vararg{Int64,%20N}},%20Vector{Int64}},%20Vector{Vector{Int64}}}}%20where%20{ValueType,%20N}) for further information.
+- If you are having trouble with convergence / efficiency of the TCI, you might have to tweak some of its options. All keyword arguments are forwarded to `T4ATensorCI.crossinterpolate2()` internally. See its [documentation](https://tensor4all.github.io/T4ATensorCI.jl/dev/documentation/#T4ATensorCI.crossinterpolate2-Union{Tuple{N},%20Tuple{ValueType},%20Tuple{Type{ValueType},%20Any,%20Union{Tuple{Vararg{Int64,%20N}},%20Vector{Int64}}},%20Tuple{Type{ValueType},%20Any,%20Union{Tuple{Vararg{Int64,%20N}},%20Vector{Int64}},%20Vector{Vector{Int64}}}}%20where%20{ValueType,%20N}) for further information.
 - If you intend to work directly with the quantics representation, [QuanticsGrids.jl](https://github.com/tensor4all/QuanticsGrids.jl) is useful for conversion between quantics and direct representations. More advanced use cases can be implemented directly using this library.

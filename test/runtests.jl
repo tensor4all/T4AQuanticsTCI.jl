@@ -1,4 +1,4 @@
-using QuanticsTCI
+using T4AQuanticsTCI
 using Test
 using LinearAlgebra
 

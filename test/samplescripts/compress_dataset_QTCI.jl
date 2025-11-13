@@ -1,5 +1,5 @@
-using QuanticsTCI
-import TensorCrossInterpolation as TCI
+using T4AQuanticsTCI
+import T4ATensorCI as TCI
 
 # Number of bits
 R = 8
