@@ -1,4 +1,4 @@
-using QuanticsTCI
+using T4AQuanticsTCI
 import QuanticsGrids as QG
 
 R = 40  # Number of bits <@$\cR$@>

@@ -1,5 +1,5 @@
-import QuanticsTCI as QTCI
-import TensorCrossInterpolation as TCI
+import T4AQuanticsTCI as QTCI
+import T4ATensorCI as TCI
 import QuanticsGrids as QG
 import Random
 

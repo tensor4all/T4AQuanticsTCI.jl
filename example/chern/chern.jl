@@ -2,8 +2,8 @@ module chern
 
 using LinearAlgebra
 using PyPlot
-import TensorCrossInterpolation as TCI
-using QuanticsTCI
+import T4ATensorCI as TCI
+using T4AQuanticsTCI
 using BenchmarkTools
 using ITensors
 

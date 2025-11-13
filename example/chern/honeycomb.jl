@@ -1,4 +1,4 @@
-using TensorCrossInterpolation
+using T4ATensorCI
 
 struct HoneycombSite
     R::Vector{Int}

@@ -1,5 +1,5 @@
 module fourierimpl
-import TensorCrossInterpolation as TCI
+import T4ATensorCI as TCI
 struct LagrangePolynomials{T}
     grid::Vector{T}
     baryweights::Vector{T}

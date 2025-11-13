@@ -1,4 +1,4 @@
-import TensorCrossInterpolation as TCI
+import T4ATensorCI as TCI
 
 # Replace this line with the dataset to be tested for compressibility.
 grid = range(-pi, pi; length=200)

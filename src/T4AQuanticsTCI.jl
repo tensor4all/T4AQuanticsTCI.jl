@@ -1,7 +1,7 @@
-module QuanticsTCI
+module T4AQuanticsTCI
 
-using TensorCrossInterpolation
-import TensorCrossInterpolation as TCI
+using T4ATensorCI
+import T4ATensorCI as TCI
 import QuanticsGrids as QG
 
 import LinearAlgebra: rank
