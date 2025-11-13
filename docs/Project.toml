@@ -1,7 +1,7 @@
 [deps]
 Documenter = "e30172f5-a6a5-5a46-863b-614d45cd2de4"
 Plots = "91a5bcdd-55d7-5caf-9e0b-520d859cae80"
-T4AQuanticsTCI = "b11687fd-3a1c-4c41-97d0-998ab401d50e"
+T4AQuanticsTCI = "ef09ec98-57a2-49a0-bf0b-86b55a3d9051"
 
 [compat]
 Documenter = "1"
