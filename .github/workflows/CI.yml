@@ -2,7 +2,7 @@ name: CI
 on:
   push:
     branches:
-      - main
+      - '**'
   pull_request:
     branches:
       - main
@@ -41,16 +41,6 @@ jobs:
           Pkg.Registry.add(
             RegistrySpec(url = "https://github.com/tensor4all/T4ARegistry.git")
           )'
-      - name: Checkout T4ATensorCI
-        uses: actions/checkout@v4
-        with:
-          repository: tensor4all/T4ATensorCI.jl
-          path: ../T4ATensorCI.jl
-      - name: Add T4ATensorCI in development mode
-        run: |
-          julia -e '
-          using Pkg
-          Pkg.develop(path = "../T4ATensorCI.jl")'
       - uses: julia-actions/cache@v1
       - uses: julia-actions/julia-buildpkg@v1
       - uses: julia-actions/julia-runtest@v1
@@ -72,16 +62,6 @@ jobs:
           Pkg.Registry.add(
             RegistrySpec(url = "https://github.com/tensor4all/T4ARegistry.git")
           )'
-      - name: Checkout T4ATensorCI
-        uses: actions/checkout@v4
-        with:
-          repository: tensor4all/T4ATensorCI.jl
-          path: ../T4ATensorCI.jl
-      - name: Add T4ATensorCI in development mode
-        run: |
-          julia -e '
-          using Pkg
-          Pkg.develop(path = "../T4ATensorCI.jl")'
       - uses: julia-actions/julia-buildpkg@v1
       - uses: julia-actions/julia-docdeploy@v1
         env:
