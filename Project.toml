@@ -1,7 +1,7 @@
 name = "T4AQuanticsTCI"
 uuid = "ef09ec98-57a2-49a0-bf0b-86b55a3d9051"
-authors = ["Ritter.Marc <Ritter.Marc@physik.uni-muenchen.de>, Hiroshi Shinaoka <h.shinaoka@gmail.com> and contributors"]
 version = "0.9.1"
+authors = ["Ritter.Marc <Ritter.Marc@physik.uni-muenchen.de>, Hiroshi Shinaoka <h.shinaoka@gmail.com> and contributors"]
 
 [deps]
 BitIntegers = "c3b6d118-76ef-56ca-8cc7-ebb389d030a1"
@@ -11,6 +11,7 @@ T4ATensorCI = "14428447-6903-48c7-83df-f2cb08af9918"
 
 [compat]
 BitIntegers = "0.3.5"
+Glob = "1.4.0"
 QuanticsGrids = "0.3, 0.6"
 T4ATensorCI = "0.12"
 julia = "1.10"
@@ -19,8 +20,9 @@ julia = "1.10"
 Aqua = "4c88cf16-eb10-579e-8560-4a9242c79595"
 Glob = "c27321d9-0574-5035-807b-f59d2c89b15c"
 JET = "c3a54625-cd67-489e-a8e7-0a5a0ff4e31b"
+Pkg = "44cfe95a-1eb2-52ea-b672-e2afdf69b78f"
 Random = "9a3f8284-a2c9-5f02-9a11-845980a1fd5c"
 Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
 
 [targets]
-test = ["Test", "Random", "Aqua", "JET", "Glob"]
+test = ["Test", "Random", "Glob", "Pkg"]
